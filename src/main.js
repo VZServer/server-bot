@@ -1,4 +1,4 @@
-// Require the necessary discord.js classes
+// 引入必要套件
 import { Client, Events, GatewayIntentBits } from "discord.js";
 import dotenv from "dotenv";
 
