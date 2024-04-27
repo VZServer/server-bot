@@ -1,22 +1,18 @@
-// 引入必要套件
 import { Client, Events, GatewayIntentBits } from "discord.js";
-import vueInit from "@/core/vue.js";
+import vueInit from "@/core/vue";
 import dotenv from "dotenv";
+import { useAppStore } from "@/store/app";
 
-import { loadCommands } from "@/core/loader";
-import { load } from "tsx";
+import { loadCommands, loadEvents } from "@/core/loader";
+
+vueInit();
+dotenv.config();
 
 loadCommands();
-dotenv.config();
-vueInit();
 
-const client = new Client({
-  intents: [GatewayIntentBits.Guilds, GatewayIntentBits.MessageContent],
-});
+const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const appStore = useAppStore();
+appStore.client = client;
 
-client.once(Events.ClientReady, (readyClient) => {
-  console.log(`機器人上線了, 好欸 登入到機器人: ${readyClient.user.tag}`);
-});
-
-// 登入機器人
+loadEvents();
 client.login(process.env.TOKEN);
