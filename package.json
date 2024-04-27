@@ -1,11 +1,17 @@
 {
+  "type": "module",
   "name": "server-bot",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/VZServer/server-bot.git",
   "author": "VZServer <vocaliczoo@gmail.com>",
-  "license": "MIT",
+  "license": "LGPL-2.0-only",
   "dependencies": {
-    "discord.js": "^14.14.1"
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.4.5",
+    "vite-node": "^1.5.2"
+  },
+  "scripts": {
+    "dev": "node src/main.js"
   }
 }
