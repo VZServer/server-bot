@@ -1,8 +1,14 @@
 // 引入必要套件
 import { Client, Events, GatewayIntentBits } from "discord.js";
+import vueInit from "@/core/vue.js";
 import dotenv from "dotenv";
 
+import { loadCommands } from "@/core/loader";
+import { load } from "tsx";
+
+loadCommands();
 dotenv.config();
+vueInit();
 
 const client = new Client({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.MessageContent],

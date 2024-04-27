@@ -9,9 +9,12 @@
   "dependencies": {
     "discord.js": "^14.14.1",
     "dotenv": "^16.4.5",
-    "vite-node": "^1.5.2"
+    "fast-glob": "^3.3.2",
+    "pinia": "^2.1.7",
+    "vite-node": "^1.5.2",
+    "vue": "^3.4.25"
   },
   "scripts": {
-    "dev": "node src/main.js"
+    "dev": "vite-node src/main.js"
   }
 }
